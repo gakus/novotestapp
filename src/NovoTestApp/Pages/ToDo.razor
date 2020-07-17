@@ -1,0 +1,42 @@
+﻿@page "/todo"
+
+@using NovoTestApp.Data
+@inject ToDoService DoService
+
+<h1>ToDo item list</h1>
+
+<p>Your today's to do list</p>
+
+@if (toDos == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Compleated</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var toDo in toDos)
+            {
+                <tr>
+                    <td>@toDo.Task</td>
+                    <td><input type="checkbox" checked="@toDo.Compleated"/></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<ToDoItem> toDos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        toDos = await DoService.GetToDoItems();
+    }
+}
