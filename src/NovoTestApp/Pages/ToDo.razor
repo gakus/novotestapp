@@ -3,40 +3,30 @@
 @using NovoTestApp.Data
 @inject ToDoService DoService
 
-<h1>ToDo item list</h1>
+<h1>Your tasks for today</h1>
 
-<p>Your today's to do list</p>
-
-@if (toDos == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Task</th>
-                <th>Compleated</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var toDo in toDos)
-            {
-                <tr>
-                    <td>@toDo.Task</td>
-                    <td><input type="checkbox" checked="@toDo.Compleated"/></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<p>You left with (@todos.Count(todo => !todo.Compleated)) tasks</p>
+<ul class="list-group">
+    @foreach (var todo in todos)
+    {
+        <li class="list-group-item">
+            <input type="checkbox" @bind="todo.Compleated" />
+            <span style="color:@(todo.Compleated ? "inherit" : "lightgray");">@todo.Task</span>
+        </li>
+    }
+</ul>
 
 @code {
-    private List<ToDoItem> toDos;
+    private List<ToDoItem> todos;
 
     protected override async Task OnInitializedAsync()
     {
-        toDos = await DoService.GetToDoItems();
+        todos = await DoService.GetToDoItems();
+    }
+
+    private void CheckItem(ToDoItem todo)
+    {
+        todos.Find(x => x.Id == todo.Id).Compleated = !todo.Compleated;
+        StateHasChanged();
     }
 }
