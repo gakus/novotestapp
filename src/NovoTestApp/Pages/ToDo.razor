@@ -3,18 +3,27 @@
 @using NovoTestApp.Data
 @inject ToDoService DoService
 
-<h1>Your tasks for today</h1>
-
-<p>You left with (@todos.Count(todo => !todo.Compleated)) tasks</p>
-<ul class="list-group">
-    @foreach (var todo in todos)
-    {
-        <li class="list-group-item">
-            <input type="checkbox" @bind="todo.Compleated" />
-            <span style="color:@(todo.Compleated ? "inherit" : "lightgray");">@todo.Task</span>
-        </li>
-    }
-</ul>
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/img/todolist.jpg" alt="Sunset in the mountains">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl">Your tasks </div>
+                <div class="text-xs italic mb-2">@todos.Count(todo => todo.Compleated)/@todos.Count() compleated</div>
+                <ul class="list-group">
+                    @foreach (var todo in todos)
+                    {
+                        <li class="">
+                            <input type="checkbox" class="form-checkbox h-4 w-4" @bind="todo.Compleated" />
+                            <span class="@(todo.Compleated ? "text-base" : "line-through text-gray-300 italic");">@todo.Task</span>
+                        </li>
+                    }
+                </ul>  
+              </div>
+              <div class="px-6 pt-4 pb-2">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#todo</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#todo</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tododododu</span>  
+              </div>
+            </div>
 
 @code {
     private List<ToDoItem> todos;
@@ -22,11 +31,5 @@
     protected override async Task OnInitializedAsync()
     {
         todos = await DoService.GetToDoItems();
-    }
-
-    private void CheckItem(ToDoItem todo)
-    {
-        todos.Find(x => x.Id == todo.Id).Compleated = !todo.Compleated;
-        StateHasChanged();
     }
 }

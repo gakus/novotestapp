@@ -3,41 +3,45 @@
 @using NovoTestApp.Data
 @inject WeatherForecastService ForecastService
 
-<h1>Weather forecast</h1>
+<span class="text-4xl">Weather forecast</span>
 
-<p>This component demonstrates fetching data from a service.</p>
-<label>Shown items</label>
-<input type="number" value="35" />
-<button class="btn btn-info">Change</button>
-
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
+<div class="flex space-x-24">
+    @if (forecasts == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table-auto shadow-md">
+            <thead>
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <th class="px-4 py-2">Date</th>
+                    <th class="px-4 py-2">Temp. (C)</th>
+                    <th class="px-4 py-2">Temp. (F)</th>
+                    <th class="px-4 py-2">Summary</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-}
+            </thead>
+            <tbody>
+                @foreach (var forecast in forecasts)
+                {
+                    <tr>
+                        <td class="border px-4 py-2">@forecast.Date.ToShortDateString()</td>
+                        <td class="border px-4 py-2">@forecast.TemperatureC</td>
+                        <td class="border px-4 py-2">@forecast.TemperatureF</td>
+                        <td class="border px-4 py-2">@forecast.Summary</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-64 h-40">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Shown items</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="numberofrows" type="number" value="35">
+        <button class="bg-blue-900 hover:bg-blue-700 focus:outline-none m-2 p-2 rounded text-white" id="change">Change</button>
+    </div>
+
+</div>
 
 @code {
     private WeatherForecast[] forecasts;

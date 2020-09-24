@@ -1,22 +1,37 @@
-﻿<ul class="nav flex-column">
-    <li class="nav-item px-3">
-        <NavLink class="nav-link" href="" Match="NavLinkMatch.All" id="home">
-            <span class="oi oi-home" aria-hidden="true"></span> Home
-        </NavLink>
-    </li>
-    <li class="nav-item px-3">
-        <NavLink class="nav-link" href="counter" id="counter">
-            <span class="oi oi-plus" aria-hidden="true"></span> Counter
-        </NavLink>
-    </li>
-    <li class="nav-item px-3">
-        <NavLink class="nav-link" href="fetchdata" id="weatherforecast">
-            <span class="oi oi-sun" aria-hidden="true"></span> Weather Forecast
-        </NavLink>
-    </li>
-    <li class="nav-item px-3">
-        <NavLink class="nav-link" href="todo" id="todolist">
-            <span class="oi oi-list-rich" aria-hidden="true"></span> To Do List
-        </NavLink>
-    </li>
-</ul>
+﻿
+    <ul class="">
+        <li class="px-8 py-2 hover:bg-gray-400">
+            <NavLink href="" Match="NavLinkMatch.All" id="home" class="flex items-center">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M13 20v-5h-2v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7.59l-.3.3a1 1 0 1 1-1.4-1.42l9-9a1 1 0 0 1 1.4 0l9 9a1 1 0 0 1-1.4 1.42l-.3-.3V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2zm5 0v-9.59l-6-6-6 6V20h3v-5c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v5h3z"/></svg>    
+                <span class="ml-2">Home</span>
+            </NavLink>
+        </li>
+        <li class="px-8 py-2 hover:bg-gray-400">
+            <NavLink href="counter" id="counter" class="flex items-center">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8.41l2.54 2.53a1 1 0 0 1-1.42 1.42L11.3 12.7A1 1 0 0 1 11 12V8a1 1 0 0 1 2 0v3.59z"/></svg>
+                <span class="ml-2">Counter</span>
+            </NavLink>
+        </li>
+        <li class="px-8 py-2 hover:bg-gray-400">
+            <NavLink href="fetchdata" id="weatherforecast" class="flex items-center">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1z"/></svg>
+                <span class="ml-2">Weather Forecast</span>
+            </NavLink>
+        </li>
+        <li class="px-8 py-2 hover:bg-gray-400">
+            <NavLink  href="todo" id="todolist" class="flex items-center">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M15 9h-3v2h3v3h2v-3h3V9h-3V6h-2v3zM0 3h10v2H0V3zm0 8h10v2H0v-2zm0-4h10v2H0V7zm0 8h10v2H0v-2z"/></svg>
+                <span class="ml-2">To Do List</span>
+            </NavLink>
+        </li>
+        <AuthorizeView>
+        <Authorized>
+            <li class="px-8 py-2 hover:bg-gray-400">
+                <NavLink href="tests" id="tests" class="flex items-center">
+                    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17 10.27V4.99a1 1 0 0 0-2 0V15a5 5 0 0 1-10 0v-1.08A6 6 0 0 1 0 8V2C0 .9.9 0 2 0h1a1 1 0 0 1 1 1 1 1 0 0 1-1 1H2v6a4 4 0 1 0 8 0V2H9a1 1 0 0 1-1-1 1 1 0 0 1 1-1h1a2 2 0 0 1 2 2v6a6 6 0 0 1-5 5.92V15a3 3 0 0 0 6 0V5a3 3 0 0 1 6 0v5.27a2 2 0 1 1-2 0z"/></svg>
+                    <span class="ml-2">Test cases</span>
+                </NavLink>
+            </li>
+        </Authorized>
+    </AuthorizeView>
+    </ul>

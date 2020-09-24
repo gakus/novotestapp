@@ -1,0 +1,67 @@
+﻿@page "/tests"
+
+<AuthorizeView>
+    <Authorized>
+        <div class="flex flex-wrap justify-around">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
+              <img class="w-full" src="/img/clock.jpg" alt="Sunset in the mountains">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Counter</div>
+                <p class="text-gray-700 text-base">
+                    <span class="text-green-500">Given</span> I have opened main page<br />
+                    <span class="text-green-500">When</span> I press counter menu element<br />
+                    <span class="text-green-500">Then</span> counter page is oppened<br />
+                    <span class="text-green-500">When</span> I press counter button<br />
+                    <span class="text-green-500">Then</span> counter increment by 3<br />
+                </p>    
+              </div>
+              <div class="px-6 pt-4 pb-2">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#so</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#much</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#time</span>  
+              </div>
+            </div>
+            <!-- divider -->
+            <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
+              <img class="w-full" src="/img/todolist.jpg" alt="Sunset in the mountains">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">ToDo list</div>
+                <p class="text-gray-700 text-base">
+                  <span class="text-green-500">Given</span> I have opened main page<br />
+                  <span class="text-green-500">When</span> I press to do list menu element<br />
+                  <span class="text-green-500">Then</span> to do page is oppened<br />
+                  <span class="text-green-500">When</span> I select checkbox to compleate task<br />
+                  <span class="text-green-500">Then</span> task change it's color from black to gray 
+                  <span class="text-green-500">And</span> task decoration change to strike trough<br />
+                  <span class="text-green-500">And</span> task checkbox is checked<br />
+                </p>    
+              </div>
+              <div class="px-6 pt-4 pb-2">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#todo</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#todo</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tododododu</span>  
+              </div>
+            </div>
+             <!-- divider -->
+            <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
+              <img class="w-full" src="/img/weather.jpg" alt="Sunset in the mountains">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Weather forecast</div>
+                <p class="text-gray-700 text-base">
+                  <span class="text-green-500">Given</span> I have opened main page<br />
+                  <span class="text-green-500">When</span> I press weather forecast menu element<br />
+                  <span class="text-green-500">Then</span> weather forecast page is oppened<br />
+                  <span class="text-green-500">When</span>I change show items to 5<br />
+                  <span class="text-green-500">And</span> Press Change button<br />
+                  <span class="text-green-500">Then</span> table show 5 rows with data<br />
+                </p>    
+              </div>
+              <div class="px-6 pt-4 pb-2">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sunny</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#cloudy</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#seesharpy</span>  
+              </div>
+            </div>
+        </div>
+    </Authorized>
+</AuthorizeView>

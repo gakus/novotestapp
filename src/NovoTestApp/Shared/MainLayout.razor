@@ -1,19 +1,24 @@
 @inherits LayoutComponentBase
-<div class="header-logo">
-    <a href="/">NovoTestApp</a>
-</div>
-<div class="header-login">
-    <LoginDisplay />
-</div>
-<div class="sidebar">
-    <NavMenu />
-</div>
 
-<div class="main">
-    <div class="content px-4">
-        @Body
-    </div>
+
+<div class="flex flex-col justify-between space-y-8 h-screen">
+    <header class="flex items-center justify-between h-12 px-8 py-4 shadow-lg text-white bg-blue-900">
+        <div>
+            <a href="/" class="text-2xl">NovoTestApp</a>
+        </div>
+        <div class="flex">
+            <LoginDisplay />
+        </div>
+    </header>
+    <main class="flex flex-auto space-x-8">
+        <div class="w-56 pt-8 shadow-2xl border border-gray-400" >
+            <NavMenu />
+        </div>
+        <div class="flex-1 p-8 shadow-2xl border border-gray-400">
+            @Body
+        </div>
+    </main>
+    <footer class="flex items-center justify-center h-12 px-8 py-4 text-white bg-blue-900 ">
+        <p>NovoTestingApp | Found everything? Want to work with us? <a href="https://novomatic-tech.com/" class="underline">Join us</a></p>
+    </footer>
 </div>
-<footer>
-    Testing App 2020
-</footer>
