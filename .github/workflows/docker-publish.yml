@@ -79,7 +79,7 @@ jobs:
           # Name of the Container Group Instance
           name: novotestapp
           # The OS type of the Containers. Accepted Values are  { Linux, Windows }
-          os-type: linux # optional, default is Linux
+          os-type: Linux # optional, default is Linux
           # The Ports to Open on the Container. Space seperate the ports for multiple values
           ports: 80 # optional, default is 80
           # The Network protocol to use. Accepted Values are { TCP, UDP }
