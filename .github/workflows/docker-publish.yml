@@ -60,7 +60,7 @@ jobs:
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          
+
       - name: Deploy to Azure Container Instances
         uses: Azure/aci-deploy@v1
         with:
@@ -72,8 +72,6 @@ jobs:
           dns-name-label: novotestapp
           # Specify the fully qualified container image name. For example, "myregistry.azurecr.io/nginx:latest" or "python:3.7.2-alpine/"
           image: $IMAGE_ID:$VERSION
-          # IP Address type of the Container Group. Accepted Values are { Private, Public }
-          ip-address: # optional, default is Public
           # Location where the Container will be deployed
           location: northeurope
           # Required Memory of the Containers in GB, accurate to one decimal place
